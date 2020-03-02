@@ -1,0 +1,6 @@
+# ignore vimrc
+.vimrc
+
+# ignore rust binaries
+bin/
+
