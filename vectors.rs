@@ -1,7 +1,7 @@
 #[derive(Debug)]
-struct DeathNote {
-    names: Vec<String>,
-    owner_name: String,
+pub struct DeathNote {
+    pub names: Vec<String>,
+    pub owner_name: String,
 }
 
 fn main() {
