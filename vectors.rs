@@ -1,16 +1,11 @@
-#[derive(Debug)]
-pub struct DeathNote {
-    pub names: Vec<String>,
-    pub owner_name: String,
-}
-
 fn main() {
-    let mut ryuk_dn = DeathNote {
-        names: Vec::new(),
-        owner_name: String::from("Ryuk")
-    };
+    let mut nums = vec![1, 2, 3, 4, 5, 6];
+    
+    for num in &mut nums {
+        *num *= 2;
+    }
 
-    ryuk_dn.names.push(String::from("Light Yagami"));
-
-    println!("{:#?}", ryuk_dn);
+    for num in nums {
+        println!("{}", num);
+    }
 }
