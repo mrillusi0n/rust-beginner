@@ -7,9 +7,7 @@ fn prompt_user(msg: &str) -> String {
     print!("{}", msg);
 
     io::stdout().flush().expect("FLUSH_ERR");
-
     io::stdin().read_line(&mut res).expect("READ_ERR");
-
     res.trim().to_string()
 }
 
