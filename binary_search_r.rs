@@ -1,20 +1,17 @@
+use std::cmp::Ordering;
+
 fn _search(k: i32, arr: &[i32], low: usize, high: usize) -> Option<usize> {
-    let found: Option<usize>;
     let mid = (low + high) / 2;
 
     if low > high {
         return None;
     }
 
-    if k == arr[mid] {
-        found = Some(mid);
-    } else if k > arr[mid] {
-        found = _search(k, arr, mid + 1, high);
-    } else {
-        found = _search(k, arr, low, mid - 1);
+    match k.cmp(&arr[mid]) {
+        Ordering::Equal => Some(mid),
+        Ordering::Greater => _search(k, arr, mid + 1, high),
+        Ordering::Less => _search(k, arr, low, mid - 1),
     }
-
-    found
 }
 
 fn search(k: i32, arr: &[i32], size: usize) -> Option<usize> {
@@ -23,7 +20,7 @@ fn search(k: i32, arr: &[i32], size: usize) -> Option<usize> {
 
 fn main() {
     let nums = [3, 4, 5, 6, 7, 8];
-    let num = 7;
+    let num = 8;
 
     if let Some(i) = search(num, &nums, 6) {
         println!("{} was found at {} :D", num, i);
