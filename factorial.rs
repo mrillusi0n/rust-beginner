@@ -5,9 +5,8 @@ fn main() {
 }
 
 fn factorial(n: u64) -> u64 {
-    if n == 1 {
-        return n;
+    match n {
+        0 => 1,
+        _ => n * factorial(n - 1),
     }
-
-    n * factorial(n - 1)
 }
