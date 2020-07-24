@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 
 fn _search(k: i32, arr: &[i32], low: usize, high: usize) -> Option<usize> {
-    let mid = (low + high) / 2;
+    let mid = low + (high - low) / 2;
 
     if low > high {
         return None;
@@ -23,7 +23,7 @@ fn main() {
     let num = 8;
 
     if let Some(i) = search(num, &nums, 6) {
-        println!("{} was found at {} :D", num, i);
+        println!("{} was found at index {} :D", num, i);
     } else {
         println!("{} was not found :[", num);
     }

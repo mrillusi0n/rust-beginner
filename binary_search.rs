@@ -6,7 +6,7 @@ fn search(k: i32, arr: &[i32], size: usize) -> Option<usize> {
     let mut mid: usize;
 
     while left <= right {
-        mid = (left + right) / 2;
+        mid = left + (right - left) / 2;
 
         match k.cmp(&arr[mid]) {
             Ordering::Equal => return Some(mid),
@@ -23,7 +23,7 @@ fn main() {
     let num = 5;
 
     if let Some(i) = search(num, &nums, 6) {
-        println!("{} was found at {} :D", num, i);
+        println!("{} was found at index {} :D", num, i);
     } else {
         println!("{} was not found :[", num);
     }
