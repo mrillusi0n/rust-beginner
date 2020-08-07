@@ -1,6 +1,5 @@
 fn fizzbuzz(n: u32) -> String {
     let mut fin = String::new();
-
     let speaks = [(3, "Fizz"), (5, "Buzz")];
 
     for (num, speak) in &speaks {
