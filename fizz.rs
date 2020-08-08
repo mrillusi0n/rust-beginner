@@ -8,7 +8,7 @@ fn fizz(n: u32) -> String {
 }
 
 fn main() {
-    for i in 0..16 {
+    for i in 0..=100 {
         println!("{}", fizz(i));
     }
 }
