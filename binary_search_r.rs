@@ -22,9 +22,8 @@ fn main() {
     let nums = [3, 4, 5, 6, 7, 8];
     let num = 8;
 
-    if let Some(i) = search(num, &nums, 6) {
-        println!("{} was found at index {} :D", num, i);
-    } else {
-        println!("{} was not found :[", num);
+    match search(num, &nums, 6) {
+        Some(i) => println!("{} was found at index {} :D", num, i),
+        None => println!("{} was not found :[", num),
     }
 }
